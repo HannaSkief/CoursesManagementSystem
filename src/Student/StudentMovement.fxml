@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="644.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Student.StudentMovementController">
+   <children>
+      <VBox maxWidth="50.0" minWidth="50.0" onMouseClicked="#close" prefHeight="200.0" prefWidth="100.0" />
+      <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+         <children>
+            <VBox maxHeight="50.0" minHeight="50.0" onMouseClicked="#close" prefHeight="200.0" prefWidth="100.0" />
+            <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" style="-fx-background-color: #ffffff;" VBox.vgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER_LEFT" style="-fx-background-color: #706fd3;">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" maxWidth="100.0">
+                           <children>
+                              <MaterialDesignIconView fill="WHITE" glyphName="CLOSE" onMouseClicked="#close" size="40" stroke="WHITE">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </MaterialDesignIconView>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label fx:id="lStudentName" text="Label" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="26.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefWidth="200.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="653.0" layoutY="12.0" onAction="#addCourses" prefHeight="42.0" prefWidth="153.0" style="-fx-background-color: #ffffff;" text="إضافة دورات" textFill="#2c2c54">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <graphic>
+                                    <MaterialDesignIconView fill="#2c2c54" glyphName="PLUS_CIRCLE" size="30" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="btnDeleteStudent" buttonType="RAISED" contentDisplay="RIGHT" focusTraversable="false" graphicTextGap="10.0" minWidth="-Infinity" onAction="#delete" prefHeight="37.0" style="-fx-background-color: #ffffff;" text="حذف " textFill="#b33939">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <MaterialDesignIconView fill="#b33939" glyphName="DELETE" size="30" />
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </JFXButton>
+                              <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#reciveCash" prefHeight="20.0" prefWidth="107.0" style="-fx-background-color: #ffffff;" text="قبض" textFill="#2c2c54">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <graphic>
+                                    <MaterialDesignIconView fill="#2c2c54" glyphName="SQUARE_INC_CASH" size="30" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" graphicTextGap="10.0" onAction="#createPdf" ripplerFill="#f59393" style="-fx-background-color: #ffffff;" textFill="#2c2c54">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Icon/pdf.png" />
+                                       </image>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <TableView fx:id="tvStudentMovement" prefHeight="200.0" prefWidth="200.0" stylesheets="@../Css/TableViewStyle.css" VBox.vgrow="ALWAYS">
+                    <columns>
+                      <TableColumn fx:id="courseIdCol" minWidth="100.0" prefWidth="75.0" text="رقم الدورة" />
+                      <TableColumn fx:id="subjectNameCol" minWidth="100.0" prefWidth="75.0" text="المادة" />
+                        <TableColumn fx:id="courseDateCol" minWidth="120.0" prefWidth="75.0" text="تاريخ الانشاء" />
+                        <TableColumn fx:id="courseStatusCol" minWidth="100.0" prefWidth="75.0" text="حالة الدورة" />
+                        <TableColumn fx:id="deservedAmountCol" minWidth="120.0" prefWidth="75.0" text="المبلغ المستحق " />
+                        <TableColumn fx:id="paidAmountCol" minWidth="120.0" prefWidth="75.0" text="المبلغ المدفوع" />
+                        <TableColumn fx:id="remainAmountCol" minWidth="120.0" prefWidth="75.0" text="الباقي" />
+                        <TableColumn fx:id="studentStatusCol" minWidth="100.0" prefWidth="75.0" text="حالة الطالب" />
+                        <TableColumn fx:id="addedAtCol" minWidth="120.0" prefWidth="75.0" text="تاريخ الإضافة" />
+                    </columns>
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <TableView fx:id="tvSummary" maxHeight="40.0" minHeight="40.0" prefWidth="200.0" stylesheets="@../Css/SummaryTableView.css">
+                    <columns>
+                      <TableColumn minWidth="100.0" prefWidth="75.0" text="C1" />
+                      <TableColumn fx:id="sumLabelCol" minWidth="100.0" prefWidth="75.0" text="C2" />
+                        <TableColumn minWidth="120.0" prefWidth="75.0" text="C2" />
+                        <TableColumn minWidth="100.0" prefWidth="75.0" text="C2" />
+                        <TableColumn fx:id="deservedAmountSum" minWidth="120.0" prefWidth="75.0" text="C2" />
+                        <TableColumn fx:id="paidAmountSum" minWidth="120.0" prefWidth="75.0" text="C2" />
+                        <TableColumn fx:id="remainAmountSum" minWidth="120.0" prefWidth="75.0" text="C2" />
+                        <TableColumn minWidth="100.0" prefWidth="75.0" text="C2" />
+                        <TableColumn minWidth="120.0" prefWidth="75.0" text="C2" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </TableView>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="210.0" maxHeight="50.0" minHeight="50.0" onMouseClicked="#close" prefHeight="200.0" prefWidth="100.0" />
+         </children>
+      </VBox>
+      <VBox layoutX="110.0" layoutY="10.0" maxWidth="50.0" minWidth="50.0" onMouseClicked="#close" prefHeight="200.0" prefWidth="100.0" />
+   </children>
+</HBox>

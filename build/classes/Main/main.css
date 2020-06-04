@@ -1,0 +1,15 @@
+
+ .side-bar-button:hover{
+    -fx-background-color: #706fd3;
+    -fx-cursor:hand;
+}
+
+.selected-button{
+    -fx-background-color: #706fd3;
+}
+
+.visit-us-label:hover{
+    -fx-font-size:22;
+    -fx-opacity: 1;
+}
+

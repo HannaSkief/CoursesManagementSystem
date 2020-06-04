@@ -1,0 +1,36 @@
+
+.combo-box .list-cell{
+     -fx-text-fill: #2c2c54;
+     -fx-background-color:  white;
+     -fx-font-size:16;
+     -fx-font-weight:bold;
+    
+}
+
+.combo-box .list-cell:hover{
+     -fx-text-fill: white ;
+     -fx-background-color:  #474787;
+     -fx-font-size:16;
+     -fx-font-weight:bold;
+}
+.jfx-combo-box {
+    -fx-prompt-text-fill: #2c2c54;
+    -fx-font-size:16; 
+    -fx-font-weight:bold 
+}
+
+.combo-box.scroll-bar:vertical,
+.combo-box .scroll-bar:vertical> .track,
+.combo-box .scroll-bar:vertical> .track-background,
+.combo-box .scroll-bar:horizontal,
+.combo-box .scroll-bar:horizontal> .track,
+.combo-box .scroll-bar:horizontal> .track-background{
+    -fx-background-color: white;
+}
+
+.combo-box .scroll-bar:vertical> .thumb{
+     -fx-background-color:  #40407a;
+}
+.combo-box .scroll-bar:horizontal> .thumb{
+     -fx-background-color:  #40407a;
+}

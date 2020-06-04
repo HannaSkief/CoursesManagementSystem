@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="676.0" prefWidth="898.0" style="-fx-background-color: #f7f1e3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Report.ReportController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="676.0" prefWidth="193.0" spacing="10.0" style="-fx-background-color: #f7f1e3;">
+         <children>
+            <HBox alignment="CENTER" prefHeight="49.0" prefWidth="193.0" spacing="10.0">
+               <children>
+                  <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#showCashReport" prefHeight="48.0" prefWidth="125.0" style="-fx-background-color: #ffffff;" text="الحركة المالية" textFill="#2c2c54">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" graphicTextGap="10.0" onAction="#createPdf" ripplerFill="#f59393" style="-fx-background-color: #ffffff;" text="قبض" textFill="#2c2c54">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icon/pdf.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <VBox prefHeight="125.0" prefWidth="233.0" spacing="5.0">
+               <children>
+                  <Label opacity="0.6" text="حالة الدورة" textFill="#2c2c54">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <JFXRadioButton fx:id="rbAllStatus" focusTraversable="false" onAction="#getReports" text="الكل" textFill="#2c2c54">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </JFXRadioButton>
+                  <JFXRadioButton fx:id="rbfinished" focusTraversable="false" layoutX="15.0" layoutY="40.0" onAction="#getReports" text="منتهية" textFill="#2c2c54">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </JFXRadioButton>
+                  <JFXRadioButton fx:id="rbNotFinished" focusTraversable="false" layoutX="15.0" layoutY="65.0" onAction="#getReports" text="غير منهية" textFill="#2c2c54">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </JFXRadioButton>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+            <Separator prefWidth="200.0" />
+            <VBox layoutX="10.0" layoutY="36.0" prefHeight="125.0" prefWidth="233.0" spacing="5.0">
+               <children>
+                  <Label opacity="0.6" text="الذمة المالية" textFill="#2c2c54">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <JFXRadioButton fx:id="rbAllCash" focusTraversable="false" onAction="#getReports" text="الكل" textFill="#2c2c54">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </JFXRadioButton>
+                  <JFXRadioButton fx:id="rbfinishedCash" focusTraversable="false" layoutX="15.0" layoutY="40.0" onAction="#getReports" text="مكتملة" textFill="#2c2c54">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </JFXRadioButton>
+                  <JFXRadioButton fx:id="rbNotFinishedCash" focusTraversable="false" layoutX="15.0" layoutY="65.0" onAction="#getReports" text="غير مكتملة" textFill="#2c2c54">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </JFXRadioButton>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+            <Separator prefWidth="200.0" />
+            <VBox prefHeight="333.0" prefWidth="233.0" spacing="5.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Label opacity="0.6" text="المادة" textFill="#2c2c54">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <JFXRadioButton fx:id="rbAllSubject" focusTraversable="false" onAction="#enableDisableSearch" text="الكل" textFill="#2c2c54">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </JFXRadioButton>
+                  <JFXRadioButton fx:id="rbSubject" focusTraversable="false" layoutX="15.0" layoutY="15.0" onAction="#enableDisableSearch" text="حسب المادة" textFill="#2c2c54">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </JFXRadioButton>
+                  <VBox fx:id="vbSearch" spacing="10.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <JFXTextField fx:id="tfSearch" focusTraversable="false" promptText="بحث">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </JFXTextField>
+                        <JFXListView fx:id="lvSubject" focusTraversable="false" style="-fx-background-color: #f7f1e3;" stylesheets="@../Css/SubjectListViewStyle.css" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+            <Separator layoutX="10.0" layoutY="313.0" prefWidth="200.0" />
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </VBox>
+      <Separator orientation="VERTICAL" prefHeight="200.0" />
+      <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+         <children>
+            <TableView fx:id="tvCourses" prefHeight="200.0" prefWidth="200.0" stylesheets="@../Css/TableViewStyle.css" VBox.vgrow="ALWAYS">
+               <columns>
+                  <TableColumn fx:id="idCol" prefWidth="75.0" text="رقم الدورة" />
+                  <TableColumn fx:id="subjectNameCol" prefWidth="75.0" text="المادة" />
+                  <TableColumn fx:id="statusCol" prefWidth="75.0" text="الحالة" />
+                  <TableColumn fx:id="costCol" prefWidth="75.0" text="التكلفة" />
+                  <TableColumn fx:id="dateCol" prefWidth="75.0" text="تاريخ الإنشاء" />
+                  <TableColumn fx:id="numberOfStudentCol" prefWidth="75.0" text="عدد الطلاب" />
+                  <TableColumn fx:id="deservedAmountCol" prefWidth="75.0" text="المبلغ المستحق" />
+                  <TableColumn fx:id="recivedAmountCol" prefWidth="75.0" text="المبلغ المقبوض" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <TableView fx:id="tvSummary" maxHeight="40.0" minHeight="40.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@../Css/SummaryTableView.css">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="الحالة" />
+                  <TableColumn prefWidth="75.0" text="المادة" />
+                  <TableColumn prefWidth="75.0" text="رقم الدورة" />
+                  <TableColumn prefWidth="75.0" text="التكلفة" />
+                  <TableColumn prefWidth="75.0" text="تاريخ الإنشاء" />
+                  <TableColumn fx:id="sumNumberOfStudentCol" prefWidth="75.0" text="عدد الطلاب" />
+                  <TableColumn fx:id="sumDeservedAmountCol" prefWidth="75.0" text="المبلغ المستحق" />
+                  <TableColumn fx:id="sumRrecivedAmountCol" prefWidth="75.0" text="المبلغ المقبوض" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" />
+               </padding>
+            </TableView>
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </children>
+</HBox>

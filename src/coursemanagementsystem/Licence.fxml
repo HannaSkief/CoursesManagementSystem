@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="529.0" prefWidth="719.0" spacing="20.0" style="-fx-background-color: #00796b;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coursemanagementsystem.LicenceController">
+   <children>
+      <JFXListView fx:id="macList" focusTraversable="false" prefHeight="219.0" prefWidth="559.0" style="-fx-background-color: #00796b;" stylesheets="@../Css/LicenceStyle.css">
+         <VBox.margin>
+            <Insets left="50.0" right="50.0" />
+         </VBox.margin>
+      </JFXListView>
+      <JFXTextField fx:id="licenceTextField" alignment="CENTER" focusColor="#40a89c" labelFloat="true" promptText="الرجاء ادخال مفتاح الترخيص" style="-fx-text-fill: #ffffff; -fx-prompt-text-fill: #a4a3a3;" unFocusColor="#a4a3a3">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="30.0" />
+         </VBox.margin>
+      </JFXTextField>
+      <JFXButton onAction="#enter" prefHeight="51.0" prefWidth="153.0" style="-fx-border-color: #455a64; -fx-border-radius: 20; -fx-border-width: 3; -fx-background-radius: 20;" text="موافق" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="40.0" />
+         </VBox.margin>
+      </JFXButton>
+      <JFXButton layoutX="259.0" layoutY="400.0" onAction="#close" prefHeight="44.0" prefWidth="109.0" style="-fx-border-color: #ef5350; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 3;" text="اغلاق" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </JFXButton>
+   </children>
+   <padding>
+      <Insets left="30.0" right="30.0" top="30.0" />
+   </padding>
+</VBox>

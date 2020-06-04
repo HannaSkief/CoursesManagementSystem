@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="772.0" prefWidth="991.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Student.AddStudentToCursesController">
+   <children>
+      <VBox onMouseClicked="#close" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+      <VBox layoutX="10.0" layoutY="10.0" prefHeight="772.0" prefWidth="478.0" HBox.hgrow="ALWAYS">
+         <children>
+            <VBox onMouseClicked="#close" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
+            <VBox layoutX="10.0" layoutY="10.0" prefHeight="679.0" prefWidth="582.0" spacing="10.0" style="-fx-background-color: #ffffff;" VBox.vgrow="ALWAYS">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <HBox alignment="CENTER" onKeyReleased="#getCourses" prefHeight="51.0" prefWidth="582.0">
+                     <children>
+                        <JFXTextField fx:id="tfsearch" alignment="CENTER" prefHeight="31.0" prefWidth="336.0" promptText="بحث">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </JFXTextField>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label fx:id="numberOfCourses" alignment="CENTER" minHeight="40.0" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #706fd3; -fx-background-radius: 50;" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets right="25.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <TableView fx:id="tvCourses" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" stylesheets="@../Css/TableViewStyle.css" VBox.vgrow="ALWAYS">
+                    <columns>
+                      <TableColumn fx:id="idCol" prefWidth="75.0" text="رقم الدورة" />
+                      <TableColumn fx:id="subjectCol" prefWidth="75.0" text="المادة" />
+                        <TableColumn fx:id="costCol" prefWidth="75.0" text="الكلفة" />
+                        <TableColumn fx:id="dateCol" prefWidth="75.0" text="تاريخ الانشاء" />
+                        <TableColumn fx:id="selectCol" prefWidth="75.0" text="تحديد" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <HBox alignment="CENTER" prefHeight="48.0" prefWidth="562.0">
+                     <children>
+                        <JFXButton focusTraversable="false" onAction="#save" prefHeight="53.0" prefWidth="284.0" style="-fx-background-color: #706fd3; -fx-background-radius: 20;" text="حفظ" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="210.0" onMouseClicked="#close" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+      <VBox layoutX="110.0" layoutY="10.0" onMouseClicked="#close" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+   </children>
+</HBox>
